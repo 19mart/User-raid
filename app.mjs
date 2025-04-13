@@ -60,7 +60,7 @@ client.once(Events.ClientReady, () => {
 });
 
 client.on(Events.InteractionCreate, async interaction => {
-  if (interaction.isChatInputCommand() && interaction.commandName === 'başla') {
+  if (interaction.isChatInputCommand() && interaction.commandName === 'start') {
     const userMessage = interaction.options.getString('message');
     const delay = interaction.options.getNumber('delay') ?? 1;
     const mentionEveryone = interaction.options.getBoolean('everyone_here') ?? false;
@@ -125,7 +125,7 @@ client.on(Events.InteractionCreate, async interaction => {
       const finalMessage = mentionEveryone ? `${message} @everyone @here` : message;
 
       if (spamActive.has(interaction.user.id)) {
-        await interaction.reply({ content: 'yarram bi dur aq çok hızlısın rahat dur bacını aynı o hızda sikerim orospu oğlu ananmı çalışıyo burda amın piçi', ephemeral: true });
+        await interaction.reply({ content: 'yarram bi dur aq çok hızlısın rahat dur bacını aynı o hızda sikerim orospu oğlu', ephemeral: true });
         return;
       }
 
